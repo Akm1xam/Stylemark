@@ -27,7 +27,7 @@
 
 ```bash
 # Клонирование репозитория
-git clone https://github.com/your-username/stylemark.git
+git clone https://github.com/Akm1xam/stylemark.git
 
 # Переход в директорию проекта
 cd stylemark
@@ -201,8 +201,8 @@ module.exports = {
 ## 👥 Сообщество
 
 ### Как можно поучаствовать?
-- 🐛 Сообщайте об ошибках через [Issues](https://github.com/your-username/stylemark/issues)
-- 💡 Предлагайте новые функции через [Discussions](https://github.com/your-username/stylemark/discussions)
+- 🐛 Сообщайте об ошибках через [Issues](https://github.com/Akm1xam/stylemark/issues)
+- 💡 Предлагайте новые функции через [Discussions](https://github.com/Akm1xam/stylemark/discussions)
 - 🔧 Присылайте Pull Requests с улучшениями
 - 📣 Расскажите о Stylemark в вашем комьюнити
 
@@ -217,5 +217,6 @@ module.exports = {
 
 - **Website**: [st.ma.19](https://t.me/stma19)
 - **Email**: st.ma.19@yandex.ru
+
 
 
