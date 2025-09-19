@@ -1,0 +1,66 @@
+/* Main styles that combine all components */
+@import url('utils/variables.css');
+@import url('utils/animations.css');
+@import url('utils/utilities.css');
+@import url('components/header.css');
+@import url('components/hero.css');
+@import url('components/features.css');
+@import url('components/demo.css');
+@import url('components/footer.css');
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-900);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-gray-400);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-500);
+}
+
+/* Focus styles */
+button:focus,
+input:focus {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --color-gray-100: #ffffff;
+        --color-gray-800: #000000;
+        --color-primary-500: #0000ff;
+    }
+}

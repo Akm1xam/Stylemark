@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylemark - Генератор и менеджер системы дизайна</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/utils/variables.css">
+    <link rel="stylesheet" href="styles/utils/animations.css">
+    <link rel="stylesheet" href="styles/utils/utilities.css">
+    <link rel="stylesheet" href="styles/components/header.css">
+    <link rel="stylesheet" href="styles/components/hero.css">
+    <link rel="stylesheet" href="styles/components/features.css">
+    <link rel="stylesheet" href="styles/components/demo.css">
+    <link rel="stylesheet" href="styles/components/footer.css">
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="#" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 22C19.3137 22 22 19.3137 22 16C22 12.6863 19.3137 10 16 10C12.6863 10 10 12.6863 10 16C10 19.3137 12.6863 22 16 22Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 18C17.1046 18 18 17.1046 18 16C18 14.8954 17.1046 14 16 14C14.8954 14 14 14.8954 14 16C14 17.1046 14.8954 18 16 18Z" fill="currentColor"/>
+                    </svg>
+                    Stylemark
+                    <span class="logo-subtitle">Дизайн-система</span>
+                </a>
+            </div>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#features" class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        Возможности
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#demo" class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        Демо
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#pricing" class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        Цены
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#docs" class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        Документация
+                    </a>
+                </li>
+            </ul>
+
+            <div class="navbar-actions">
+                <div class="auth-buttons">
+                    <a href="#login" class="btn btn-outline btn-sm">Войти</a>
+                    <a href="#signup" class="btn btn-primary btn-sm">Регистрация</a>
+                </div>
+
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <svg class="theme-icon-light" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Открыть меню">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title fade-in">Создавайте, применяйте и делитесь вашим дизайн-языком</h1>
+                <p class="hero-subtitle fade-in delay-1">Stylemark помогает командам создавать согласованные дизайн-системы, управлять токенами и генерировать готовый код для проектов.</p>
+                <button class="cta-button fade-in delay-2" id="startProjectBtn">
+                    Начать проект
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Почему Stylemark?</h2>
+                <div class="features">
+                    <div class="feature-card fade-in delay-1">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Единый источник истины</h3>
+                        <p class="feature-description">Храните все дизайн-токены в одном месте, избегая расхождений между дизайном и разработкой.</p>
+                    </div>
+
+                    <div class="feature-card fade-in delay-2">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                                <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                                <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Согласованность дизайна</h3>
+                        <p class="feature-description">Поддерживайте консистентность во всех компонентах и проектах с помощью централизованной системы токенов.</p>
+                    </div>
+
+                    <div class="feature-card fade-in delay-3">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Экспорт кода</h3>
+                        <p class="feature-description">Генерируйте готовый код для CSS, SCSS, Tailwind и других технологий одним кликом.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Демонстрация возможностей</h2>
+        
+        <div class="demo-container">
+            <!-- Цветовая палитра -->
+            <div class="demo-section">
+                <h3 class="demo-title">Цветовая палитра</h3>
+                <p class="demo-description">Создавайте и управляйте цветовыми палитрами с автоматической генерацией оттенков.</p>
+                
+                <div class="color-generator">
+                    <div class="color-input-group">
+                        <div class="color-input-wrapper">
+                            <label for="baseColor">
+                                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 21a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                Базовый цвет:
+                            </label>
+                            <div class="color-input-wrapper">
+                                <input type="color" id="baseColor" value="#3b82f6">
+                                <input type="text" id="baseColorHex" value="#3b82f6" placeholder="#3b82f6">
+                            </div>
+                        </div>
+                        <button id="generatePaletteBtn" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            Сгенерировать палитру
+                        </button>
+                    </div>
+                    
+                    <div class="color-palette" id="colorPalette">
+                        <div class="color-item" style="background-color: var(--color-primary-50); color: var(--color-gray-800);">
+                            <span>50</span>
+                            <span class="color-hex">#eff6ff</span>
+                        </div>
+                        <div class="color-item" style="background-color: var(--color-primary-100); color: var(--color-gray-800);">
+                            <span>100</span>
+                            <span class="color-hex">#dbeafe</span>
+                        </div>
+                        <div class="color-item" style="background-color: var(--color-primary-500);">
+                            <span>500</span>
+                            <span class="color-hex">#3b82f6</span>
+                        </div>
+                        <div class="color-item" style="background-color: var(--color-primary-600);">
+                            <span>600</span>
+                            <span class="color-hex">#2563eb</span>
+                        </div>
+                        <div class="color-item" style="background-color: var(--color-primary-900);">
+                            <span>900</span>
+                            <span class="color-hex">#1e3a8a</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contrast-checker">
+                        <h4>
+                            <svg class="icon-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                            Проверка контрастности
+                        </h4>
+                        <div class="contrast-inputs">
+                            <div class="color-input-wrapper">
+                                <label for="foregroundColor">Цвет текста:</label>
+                                <input type="color" id="foregroundColor" value="#000000">
+                            </div>
+                            <div class="color-input-wrapper">
+                                <label for="backgroundColor">Цвет фона:</label>
+                                <input type="color" id="backgroundColor" value="#ffffff">
+                            </div>
+                        </div>
+                        <div class="contrast-result">
+                            <div class="contrast-preview" style="background-color: #ffffff; color: #000000;">
+                                Пример текста для проверки контрастности
+                            </div>
+                            <div class="contrast-score">
+                                <span class="score">Контраст: 21:1</span>
+                                <span class="rating success">AAA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Типографика -->
+            <div class="demo-section">
+                <h3 class="demo-title">Типографика</h3>
+                <p class="demo-description">Определяйте системные шрифты, размеры, межстрочные интервалы и начертания.</p>
+                
+                <div class="typography-demo">
+                    <div class="typography-controls">
+                        <div class="control-group">
+                            <label for="fontFamily">
+                                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 20h16"></path>
+                                    <path d="M4 4h16"></path>
+                                    <path d="M4 8h16"></path>
+                                    <path d="M4 12h16"></path>
+                                </svg>
+                                Семейство шрифтов:
+                            </label>
+                            <select id="fontFamily">
+                                <option value="Inter, sans-serif">Inter</option>
+                                <option value="Roboto, sans-serif">Roboto</option>
+                                <option value="Open Sans, sans-serif">Open Sans</option>
+                                <option value="Montserrat, sans-serif">Montserrat</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="fontSize">Размер шрифта:</label>
+                            <input type="range" id="fontSize" min="12" max="24" value="16">
+                            <span id="fontSizeValue">16px</span>
+                        </div>
+                    </div>
+                    
+                    <div class="typography-item">
+                        <div class="typography-label">
+                            <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 20h16"></path>
+                                <path d="M4 4h16"></path>
+                            </svg>
+                            Заголовок 1
+                        </div>                        
+                <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold);">Создавайте дизайн-системы проще</h1>
+                    </div>
+                    <div class="typography-item">
+                        <div class="typography-label">
+                            <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 20h16"></path>
+                                <path d="M4 4h16"></path>
+                            </svg>
+                            Заголовок 2
+                        </div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold);">Согласованность во всех проектах</h3>
+                    </div>
+                    <div class="typography-item">
+                        <div class="typography-label">
+                            <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 20h16"></path>
+                                <path d="M4 4h16"></path>
+                            </svg>
+                            Основной текст
+                        </div>
+                        <p style="font-size: var(--font-size-base);">Stylemark помогает командам создавать согласованные дизайн-системы, управлять токенами и генерировать готовый код для проектов.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Компоненты -->
+            <div class="demo-section">
+                <h3 class="demo-title">Компоненты</h3>
+                <p class="demo-description">Создавайте интерактивные компоненты на основе ваших токенов.</p>
+                
+                <div class="components-demo">
+                    <div class="component-controls">
+                        <div class="control-group">
+                            <label for="buttonRadius">Скругление углов:</label>
+                            <input type="range" id="buttonRadius" min="0" max="16" value="6">
+                            <span id="buttonRadiusValue">6px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="buttonPadding">Внутренний отступ:</label>
+                            <input type="range" id="buttonPadding" min="8" max="24" value="12">
+                            <span id="buttonPaddingValue">12px</span>
+                        </div>
+                    </div>
+                    
+                    <div class="button-demo">
+                        <button class="demo-button button-primary">Основная кнопка</button>
+                        <button class="demo-button button-secondary">Вторичная кнопка</button>
+                        <button class="demo-button button-outline">Контурная кнопка</button>
+                    </div>
+                    
+                    <div class="input-demo">
+                        <div class="input-group">
+                            <label for="demoInput">Пример поля ввода</label>
+                            <input type="text" id="demoInput" placeholder="Введите текст">
+                            <div class="input-hint">
+                                <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                                Это подсказка для поля ввода
+                            </div>                        </div>
+                        
+                        <div class="input-group">
+                            <label for="demoSelect">Пример выпадающего списка</label>
+                            <select id="demoSelect">
+                                <option value="">Выберите вариант</option>
+                                <option value="1">Вариант 1</option>
+                                <option value="2">Вариант 2</option>
+                                <option value="3">Вариант 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Экспорт кода -->
+            <div class="demo-section">
+                <h3 class="demo-title">Экспорт кода</h3>
+                <p class="demo-description">Генерируйте готовый код для различных фреймворков и платформ.</p>
+                
+                <div class="export-demo">
+                    <div class="export-options">
+                        <button class="export-option active" data-format="css">CSS Variables</button>
+                        <button class="export-option" data-format="scss">SCSS Variables</button>
+                        <button class="export-option" data-format="tailwind">Tailwind Config</button>
+                        <button class="export-option" data-format="json">JSON</button>
+                    </div>
+                    
+                    <div class="code-preview">
+                        <pre><code class="language-css">:root {
+                            --color-primary-50: #eff6ff;
+                            --color-primary-100: #dbeafe;
+                            --color-primary-500: #3b82f6;
+                            --color-primary-600: #2563eb;
+                            --color-primary-900: #1e3a8a;
+                            
+                            --font-family: 'Inter', sans-serif;
+                            --font-size-base: 1rem;
+                            --font-weight-normal: 400;
+                            --font-weight-bold: 700;
+                            
+                            --spacing-1: 0.25rem;
+                            --spacing-2: 0.5rem;
+                            --spacing-4: 1rem;
+                            --spacing-6: 1.5rem;
+                            
+                            --radius-md: 0.375rem;
+                            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                            }</code></pre>
+                                                </div>
+                                                
+                            <button class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Экспортировать код
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 22C19.3137 22 22 19.3137 22 16C22 12.6863 19.3137 10 16 10C12.6863 10 10 12.6863 10 16C10 19.3137 12.6863 22 16 22Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 18C17.1046 18 18 17.1046 18 16C18 14.8954 17.1046 14 16 14C14.8954 14 14 14.8954 14 16C14 17.1046 14.8954 18 16 18Z" fill="currentColor"/>
+                    </svg>
+                    Stylemark
+                </div>
+                <p class="footer-description">Генератор и менеджер системы дизайна. Создавайте, применяйте и делитесь вашим дизайн-языком.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-link-group">
+                    <h4>Ресурсы</h4>
+                    <a href="#" class="footer-link">Документация</a>
+                    <a href="#" class="footer-link">Примеры</a>
+                    <a href="#" class="footer-link">Блог</a>
+                    <a href="#" class="footer-link">Шаблоны</a>
+                </div>
+                <div class="footer-link-group">
+                    <h4>Поддержка</h4>
+                    <a href="#" class="footer-link">Помощь</a>
+                    <a href="#" class="footer-link">Контакты</a>
+                    <a href="#" class="footer-link">Сообщество</a>
+                    <a href="#" class="footer-link">Форум</a>
+                </div>
+                <div class="footer-link-group">
+                    <h4>Компания</h4>
+                    <a href="#" class="footer-link">О нас</a>
+                    <a href="#" class="footer-link">Вакансии</a>
+                    <a href="#" class="footer-link">Партнеры</a>
+                    <a href="#" class="footer-link">Пресса</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">© 2024 Stylemark. Все права защищены.</div>
+            <div class="footer-bottom-links">
+                <a href="#" class="footer-bottom-link">Условия использования</a>
+                <a href="#" class="footer-bottom-link">Конфиденциальность</a>
+                <a href="#" class="footer-bottom-link">Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.4.2/chroma.min.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/color-generator.js"></script>
+    <script src="scripts/tokens-manager.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

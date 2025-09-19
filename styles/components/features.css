@@ -1,0 +1,106 @@
+.section {
+    padding: var(--space-16) 0;
+}
+
+.section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-10);
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-300));
+    margin: var(--space-6) auto 0;
+    border-radius: var(--radius-full);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+}
+
+.feature-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-base);
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(to bottom, var(--color-primary-500), var(--color-primary-300));
+    transition: var(--transition-slow);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-card:hover::before {
+    height: 100%;
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--space-12);
+    height: var(--space-12);
+    background-color: var(--color-primary-50);
+    color: var(--color-primary-600);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-6);
+    font-size: var(--font-size-2xl);
+    transition: var(--transition-base);
+}
+
+.feature-card:hover .feature-icon {
+    background-color: var(--color-primary-100);
+    transform: scale(1.05);
+}
+
+.feature-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-4);
+}
+
+.feature-description {
+    color: var(--color-gray-600);
+    line-height: var(--line-height-relaxed);
+}
+
+@media (max-width: 1024px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card {
+        padding: var(--space-6);
+    }
+}

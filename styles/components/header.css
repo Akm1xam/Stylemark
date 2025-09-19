@@ -1,0 +1,311 @@
+.header {
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4) 0;
+    height: var(--header-height);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-600);
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+.logo:hover {
+    color: var(--color-primary-700);
+    transform: translateY(-1px);
+}
+
+.logo svg {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary-500);
+    transition: var(--transition-base);
+}
+
+.logo:hover svg {
+    transform: rotate(10deg);
+}
+
+.logo-subtitle {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-gray-500);
+    margin-left: var(--space-2);
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: var(--color-gray-700);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    transition: var(--transition-base);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.nav-link:hover {
+    color: var(--color-primary-600);
+    background-color: var(--color-primary-50);
+}
+
+.nav-link.active {
+    color: var(--color-primary-600);
+    background-color: var(--color-primary-50);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: var(--color-primary-500);
+    border-radius: var(--radius-full);
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-gray-500);
+    padding: var(--space-2);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.theme-toggle:hover {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-700);
+    transform: scale(1.1);
+}
+
+.theme-icon-light,
+.theme-icon-dark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: var(--transition-base);
+}
+
+.theme-icon-dark {
+    opacity: 0;
+}
+
+[data-theme="dark"] .theme-icon-light {
+    opacity: 0;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+    opacity: 1;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    transition: var(--transition-base);
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+}
+
+.btn-sm {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-xs);
+}
+
+.btn-primary {
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+    border-color: var(--color-primary-600);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-700);
+    border-color: var(--color-primary-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-primary-600);
+    border-color: var(--color-primary-600);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-gray-600);
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    transition: var(--transition-base);
+}
+
+.mobile-menu-btn:hover {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-800);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .navbar-nav {
+        gap: var(--space-4);
+    }
+    
+    .nav-link {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+    
+    .navbar-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-white);
+        box-shadow: var(--shadow-lg);
+        padding: var(--space-4);
+        flex-direction: column;
+        gap: var(--space-3);
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        border-top: 1px solid var(--color-gray-200);
+    }
+    
+    .navbar-nav.open {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: var(--space-3);
+        justify-content: flex-start;
+        border-radius: var(--radius-md);
+    }
+    
+    .nav-link.active::after {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .auth-buttons {
+        display: none;
+    }
+    
+    .logo-subtitle {
+        display: none;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимации для хедера */
+@keyframes headerSlideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.header {
+    animation: headerSlideIn 0.5s ease-out;
+}
