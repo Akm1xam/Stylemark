@@ -218,9 +218,4 @@ module.exports = {
 - **Website**: [st.ma.19](https://t.me/stma19)
 - **Email**: st.ma.19@yandex.ru
 
----
-
-<p align="center">
-  <strong>Stylemark</strong> - делаем дизайн-системы доступными для всех 🎨
-</p>
 
